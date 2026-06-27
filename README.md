@@ -1,5 +1,5 @@
 **Mini-Projeto 2 | Sistemas Baseados em Conhecimento ·
-Controlador Fuzzy Mamdani implementado em `scikit-fuzzy`
+Controlador Fuzzy Mamdani implementado em `scikit-fuzzy`**
 
 ---
 ## Equipe
