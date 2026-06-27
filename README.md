@@ -1,7 +1,7 @@
-**Mini-Projeto 2 | Sistemas Baseados em Conhecimento ·
+**Mini-Projeto 2 | Sistemas Baseados em Conhecimento UFPB ·
 Controlador Fuzzy Mamdani implementado em `scikit-fuzzy`**
+
 Período: **2026.1**
-**UFPB**
 ---
 ## Equipe
 
