@@ -106,7 +106,7 @@ AVANÇADO      →        INTENSA   MODERADA    LEVE
 |---|---|---|---|---|
 | **A** | 9.0 (avançado) | 1.5 (baixa) | **92.2% FCmáx** | Zona 5 — Anaeróbico / VO₂ Máx |
 | **B** | 5.0 (intermediário) | 5.0 (moderada) | **74.0% FCmáx** | Zona 3–4 — Aeróbico Moderado |
-| **C** | 1.5 (iniciante) | 8.5 (alta) | **56.8% FCmáx** | Zona 1–2 — Recuperação Ativa |
+| **C** | 3.5 (iniciante) | 7.5 (alta) | **56.8% FCmáx** | Zona 1–2 — Recuperação Ativa |
 
 ---
 
