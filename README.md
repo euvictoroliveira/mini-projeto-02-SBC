@@ -71,17 +71,17 @@ intensa  → trapmf [80, 90, 100, 100]  # Zona 5:   anaeróbico / VO₂ máx
 
 ## Base de Regras Fuzzy (9 regras — cobertura total 3 × 3)
 
-| # | SE condicionamento É | E fadiga É | ENTÃO intensidade É |
-|---|---|---|---|
-| R1 | Iniciante | Baixa | **Leve** |
-| R2 | Iniciante | Moderada | **Leve** |
-| R3 | Iniciante | Alta | **Leve** |
-| R4 | Intermediário | Baixa | **Moderada** |
-| R5 | Intermediário | Moderada | **Moderada** |
-| R6 | Intermediário | Alta | **Leve** |
-| R7 | Avançado | Baixa | **Intensa** |
-| R8 | Avançado | Moderada | **Moderada** |
-| R9 | Avançado | Alta | **Leve** |
+| #  | SE condicionamento É  | E fadiga É | ENTÃO intensidade É  |
+|----|-----------------------|------------|----------------------|
+| R1 | Iniciante             | Baixa      | **Leve**             |
+| R2 | Iniciante             | Moderada   | **Leve**             |
+| R3 | Iniciante             | Alta       | **Leve**             |
+| R4 | Intermediário         | Baixa      | **Moderada**         |
+| R5 | Intermediário         | Moderada   | **Moderada**         |
+| R6 | Intermediário         | Alta       | **Leve**             |
+| R7 | Avançado              | Baixa      | **Intensa**          |
+| R8 | Avançado              | Moderada   | **Moderada**         |
+| R9 | Avançado              | Alta       | **Leve**             |
 
 ### Matriz de Decisão
 
@@ -102,11 +102,11 @@ AVANÇADO      →        INTENSA   MODERADA    LEVE
 
 ## Casos de Teste
 
-| Teste | Condicionamento | Fadiga | Saída do sistema | Zona fisiológica |
-|---|---|---|---|---|
-| **A** | 9.0 (avançado) | 1.5 (baixa) | **92.2% FCmáx** | Zona 5 — Anaeróbico / VO₂ Máx |
-| **B** | 5.0 (intermediário) | 5.0 (moderada) | **74.0% FCmáx** | Zona 3–4 — Aeróbico Moderado |
-| **C** | 3.5 (iniciante) | 7.5 (alta) | **56.8% FCmáx** | Zona 1–2 — Recuperação Ativa |
+| Teste | Condicionamento        | Fadiga          | Saída do sistema   | Zona fisiológica                        |
+|-------|------------------------|-----------------|--------------------|-----------------------------------------|
+| **A** | 9.0 (avançado)         | 1.5 (baixa)     | **92.2% FCmáx**    | Zona 5 — Anaeróbico / VO₂ Máx           |
+| **B** | 5.0 (intermediário)    | 5.0 (moderada)  | **74.0% FCmáx**    | Zona 3–4 — Aeróbico Moderado            |
+| **C** | 3.5 (iniciante)        | 7.5 (alta)      | **56.8% FCmáx**    | Zona 1–2 — Recuperação Ativa            |
 
 ---
 
@@ -130,25 +130,25 @@ jupyter notebook FuzzyFit.ipynb
 
 ### Dependências
 
-| Pacote | Versão testada | Finalidade |
-|---|---|---|
-| `scikit-fuzzy` | 0.5.0 | Motor de inferência Mamdani |
-| `numpy` | ≥ 1.21 | Universos numéricos e operações |
-| `matplotlib` | ≥ 3.4 | Visualização das MFs e superfície |
+| Pacote           | Versão testada | Finalidade                                    |
+|------------------|----------------|-----------------------------------------------|
+| `scikit-fuzzy`   | 0.5.0          | Motor de inferência Mamdani                   |
+| `numpy`          | ≥ 1.21         | Universos numéricos e operações               |
+| `matplotlib`     | ≥ 3.4          | Visualização das MFs e superfície             |
 
 ---
 
 ## Comparativo: Regras Crisp (MP1) × Controlador Fuzzy (MP2)
 
-| Aspecto | SBC Crisp (Mini-Projeto 1) | SBC Fuzzy (Mini-Projeto 2) |
-|---|---|---|
-| **Regras** | `IF-THEN` com limiares fixos | `IF-THEN` com predicados linguísticos graduais |
-| **Fronteiras** | Abruptas (*cliff edges*) | Suaves — sobreposição de MFs |
-| **Saída** | Rótulo simbólico (`"alto"`, `"leve"`) | Valor contínuo (ex.: `74.0%`) |
-| **Expressividade** | Uma regra, um resultado | Múltiplas regras se combinam proporcionalmente |
-| **Manutenção** | Cada novo limiar exige nova regra | Ajustar uma MF afeta suavemente várias regiões |
-| **Auditabilidade** | Alta — cada regra é independente | Alta — cada regra tem grau de ativação rastreável |
-| **Imprecisão linguística** | Não tratada nativamente | Tratada nativamente via conjuntos fuzzy |
+| Aspecto                        | SBC Crisp (Mini-Projeto 1)                         | SBC Fuzzy (Mini-Projeto 2)                                |
+|--------------------------------|----------------------------------------------------|-----------------------------------------------------------|
+| **Regras**                     | `IF-THEN` com limiares fixos                       | `IF-THEN` com predicados linguísticos graduais            |
+| **Fronteiras**                 | Abruptas (*cliff edges*)                           | Suaves — sobreposição de MFs                              |
+| **Saída**                      | Rótulo simbólico (`"alto"`, `"leve"`)              | Valor contínuo (ex.: `74.0%`)                             |
+| **Expressividade**             | Uma regra, um resultado                            | Múltiplas regras se combinam proporcionalmente            |
+| **Manutenção**                 | Cada novo limiar exige nova regra                  | Ajustar uma MF afeta suavemente várias regiões            |
+| **Auditabilidade**             | Alta — cada regra é independente                   | Alta — cada regra tem grau de ativação rastreável         |
+| **Imprecisão linguística**     | Não tratada nativamente                             | Tratada nativamente via conjuntos fuzzy                   |
 
 ### Exemplo concreto de cliff edge evitado
 
